@@ -76,7 +76,6 @@ with st.sidebar :
         max_value=max_date,
         value=[min_date, max_date]
     )
-    
 
 main_df = all_df[(all_df["dteday"] >= pd.to_datetime(start_date)) &
                  (all_df["dteday"] <= pd.to_datetime(end_date))]
