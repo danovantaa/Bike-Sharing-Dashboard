@@ -60,7 +60,7 @@ def create_clustering(df):
     
 day_df = pd.read_csv("dashboard/data/day.csv")
 hour_df = pd.read_csv("dashboard/data/hour.csv")
-all_df = pd.read_csv("all.csv")
+all_df = pd.read_csv("dashboard/all.csv")
 
 all_df.sort_values(by="dteday", inplace=True)
 all_df.reset_index(inplace=True)
