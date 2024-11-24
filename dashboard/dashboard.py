@@ -30,7 +30,7 @@ def create_season(df):
         3: 'Fall',
         4: 'Winter'
     }
-    season_summary = all_df.groupby('season')['cnt'].mean().reset_index()
+    season_summary = all_df.groupby('season')['cnt'].sum().reset_index()
     season_summary['season_label'] = season_summary['season'].map(season_labels)
     return season_summary
 
@@ -77,8 +77,7 @@ with st.sidebar :
         value=[min_date, max_date]
     )
     
-# main_df = all_df[(all_df["dteday"]>= str(start_date)) &
-#                 (all_df["dteday"]<= str (end_date))]
+
 main_df = all_df[(all_df["dteday"] >= pd.to_datetime(start_date)) &
                  (all_df["dteday"] <= pd.to_datetime(end_date))]
 
