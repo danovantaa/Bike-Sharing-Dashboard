@@ -58,8 +58,8 @@ def create_clustering(df):
     Z = linkage(hourly_data[['hr', 'total_rentals']], method = 'ward')
     return Z
     
-day_df = pd.read_csv("data/day.csv")
-hour_df = pd.read_csv("data/hour.csv")
+day_df = pd.read_csv("dashboard/data/day.csv")
+hour_df = pd.read_csv("dashboard/data/hour.csv")
 all_df = pd.read_csv("all.csv")
 
 all_df.sort_values(by="dteday", inplace=True)
